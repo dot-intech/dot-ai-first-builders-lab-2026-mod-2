@@ -1,0 +1,103 @@
+.page {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  min-height: 100vh;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+}
+
+.fileInput {
+  width: 100%;
+}
+
+.preview {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.analyzeButton {
+  padding: 0.75rem 2rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--foreground);
+  color: var(--background);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.analyzeButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid color-mix(in srgb, var(--foreground) 20%, transparent);
+  border-top-color: var(--foreground);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.errorText {
+  color: #c0392b;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding-top: 0.5rem;
+  border-top: 1px solid color-mix(in srgb, var(--foreground) 12%, transparent);
+}
+
+.description {
+  color: var(--foreground);
+}
+
+.calories {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.caloriesValue {
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.caloriesUnit {
+  color: #52514e;
+  font-size: 0.9rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .caloriesUnit {
+    color: #c3c2b7;
+  }
+}
+
+.disclaimer {
+  font-size: 0.8rem;
+  color: #898781;
+}
